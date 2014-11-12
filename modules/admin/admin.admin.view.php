@@ -373,7 +373,7 @@ class adminAdminView extends admin
 		$oSecurity->encodeHTML('module_list..', 'module_list..author..', 'newVersionList..');
 
 		// gathering enviroment check
-		$mainVersion = join('.', array_slice(explode('.', __XE_VERSION__), 0, 2));
+		$mainVersion = join('.', array_slice(explode('.', __SWHITE_VERSION__), 0, 2));
 		$path = FileHandler::getRealPath('./files/env/' . $mainVersion);
 		$isEnviromentGatheringAgreement = FALSE;
 		if(file_exists($path))

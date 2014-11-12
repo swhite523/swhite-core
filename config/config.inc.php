@@ -27,13 +27,13 @@ if(!defined('__XE__'))
 define('__ZBXE__', __XE__);
 
 /**
- * Display XE's full version.
+ * Display SWHITE's full version.
  */
-define('__XE_VERSION__', '1.7.7.2');
-define('__XE_VERSION_ALPHA__', (stripos(__XE_VERSION__, 'alpha') !== false));
-define('__XE_VERSION_BETA__', (stripos(__XE_VERSION__, 'beta') !== false));
-define('__XE_VERSION_RC__', (stripos(__XE_VERSION__, 'rc') !== false));
-define('__XE_VERSION_STABLE__', (!__XE_VERSION_ALPHA__ && !__XE_VERSION_BETA__ && !__XE_VERSION_RC__));
+define('__SWHITE_VERSION__', '0.1-beta.1');
+define('__SWHITE_VERSION_ALPHA__', (stripos(__SWHITE_VERSION__, 'alpha') !== false));
+define('__SWHITE_VERSION_BETA__', (stripos(__SWHITE_VERSION__, 'beta') !== false));
+define('__SWHITE_VERSION_RC__', (stripos(__SWHITE_VERSION__, 'rc') !== false));
+define('__SWHITE_VERSION_STABLE__', (!__SWHITE_VERSION_ALPHA__ && !__SWHITE_VERSION_BETA__ && !__SWHITE_VERSION_RC__));
 
 /**
  * @deprecated __ZBXE_VERSION__ will be removed. Use __XE_VERSION__ instead.
@@ -70,6 +70,7 @@ else
 	 * Location site
 	 */
 	define('_XE_LOCATION_SITE_', 'http://www.xpressengine.org/');
+	define('_SWHITE_LOCATION_SITE_', 'http://swhite523.com/');
 
 	/**
 	 * Download server

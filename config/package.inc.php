@@ -1,7 +1,7 @@
 <?php
 /* Copyright (C) NAVER <http://www.navercorp.com> */
+/* Copyright (C) SWHITE <http://swhite523.com> */
 
-define('_XE_PACKAGE_', 'XE');
-define('_XE_LOCATION_', 'ko');
-define('_XE_LOCATION_SITE_', 'http://www.xpressengine.com/');
-define('_XE_DOWNLOAD_SERVER_', 'http://download.xpressengine.com/');
+define('_SWHITE_PACKAGE_', 'XE');
+define('_SWHITE_LOCATION_', 'ko');
+define('_SWHITE_LOCATION_SITE_', 'http://www.swhite523.com/');
