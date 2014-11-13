@@ -119,6 +119,10 @@ class point extends ModuleObject
 		// 2012. 08. 29 Add a trigger to copy additional setting when the module is copied 
 		if(!$oModuleModel->getTrigger('module.procModuleAdminCopyModule', 'point', 'controller', 'triggerCopyModule', 'after')) return true;
 
+		$oDB = &DB::getInstance();
+
+		if(!$oDB->isColumnExists("document_readed_log", "point")) return true;
+
 		return false;
 	}
 
@@ -167,6 +171,12 @@ class point extends ModuleObject
 		if(!$oModuleModel->getTrigger('module.procModuleAdminCopyModule', 'point', 'controller', 'triggerCopyModule', 'after'))
 		{
 			$oModuleController->insertTrigger('module.procModuleAdminCopyModule', 'point', 'controller', 'triggerCopyModule', 'after');
+		}
+
+		$oDB = DB::getInstance();
+		if(!$oDB->isColumnExists("document_readed_log", "point"))
+		{
+			$oDB->addColumn("document_readed_log", "point", "varchar", 11);
 		}
 
 		return new Object(0, 'success_updated');

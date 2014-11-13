@@ -410,6 +410,7 @@ class pointController extends point
 			$args->member_srl = $member_srl;
 			$args->document_srl = $obj->document_srl;
 			$output = executeQuery('document.getDocumentReadedLogInfo', $args);
+			debugPrint($output);
 			if($output->data->count) return new Object();
 			$cur_point = $oPointModel->getPoint($member_srl, true);
 		}
@@ -423,6 +424,13 @@ class pointController extends point
 		if($config->disable_read_document == 'Y' && $point < 0 && abs($point)>$cur_point)
 		{
 			$obj->add('content', sprintf(Context::getLang('msg_disallow_by_point'), abs($point), $cur_point));
+			/*
+			$point = new stdClass();
+			$point->member_srl = $member_srl;
+			$point->document_srl = $obj->document_srl;
+			$point->ipaddress
+			$output = executeQuery('point.insertDocumentReadedPointLog', $point)
+			*/
 			return new Object();
 		}
 		// If not logged in, pass
@@ -430,7 +438,12 @@ class pointController extends point
 		// Pass, if there are no requested points
 		if(!$point) return new Object();
 		// If the read record is missing, leave it
+		if($point)
+		{
+			$args->point = 'Y';
+		}
 		$output = executeQuery('document.insertDocumentReadedLog', $args);
+		debugPirnt($output);
 		// Increase the point
 		$cur_point += $point;
 		$this->setPoint($member_srl,$cur_point);
